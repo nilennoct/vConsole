@@ -120,6 +120,7 @@ export class VConsoleStorageModel extends VConsoleModel {
     } else {
       this.deleteStorage('sessionStorage');
     }
+    /*
     if (defaultStorages.indexOf('wxStorage') > -1) {
       if (isWxEnv()) {
         this.storage.set('wxStorage', new WxStorage());
@@ -127,6 +128,7 @@ export class VConsoleStorageModel extends VConsoleModel {
     } else {
       this.deleteStorage('wxStorage');
     }
+    */
   }
 
   protected promisify<T extends string | void>(ret: T | Promise<T>) {

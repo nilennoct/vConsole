@@ -99,7 +99,7 @@ export function isWindow(value) {
 export function isIterable(value) {
   if (
     value === null
-    || value === undefined 
+    || value === undefined
     || typeof value === 'string'
     || typeof value === 'boolean'
     || typeof value === 'number'
@@ -314,7 +314,7 @@ const _safeJSONStringify = (obj, opt: ISafeJSONStringifyOption, _curDepth = 0) =
   opt.ret += prettySpace.substring(0, prettySpace.length - 2) + suffix;
 };
 /**
- * A safe `JSON.stringify` method. 
+ * A safe `JSON.stringify` method.
  */
 export function safeJSONStringify(obj, opt: {
   maxDepth?: number,
@@ -473,7 +473,8 @@ export function getUniqueID(prefix: string = '') {
  * Determine whether it is inside a WeChat Miniprogram.
  */
 export function isWxEnv() {
-  return typeof window !== 'undefined' && !!(<any>window).__wxConfig && !!(<any>window).wx && !!(<any>window).__virtualDOM__;
+  return false;
+  // return typeof window !== 'undefined' && !!(<any>window).__wxConfig && !!(<any>window).wx && !!(<any>window).__virtualDOM__;
 }
 
 /**

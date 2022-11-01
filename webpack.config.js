@@ -49,17 +49,13 @@ module.exports = (env, argv) => {
     entry: {
       vconsole: Path.resolve(__dirname, './src/vconsole.ts'),
     },
-    target: ['web', 'es5'],
+    target: 'node14',
     output: {
       path: Path.resolve(__dirname, './dist'),
       filename: '[name].min.js',
       library: {
-        name: 'VConsole',
-        type: 'umd',
-        umdNamedDefine: true,
-        export: "default",
+        type: 'commonjs2',
       },
-      globalObject: 'this || self',
     },
     resolve: {
       extensions: ['.ts', '.js', '.html', '.less', '.mjs', '.svelte'],

@@ -1,4 +1,4 @@
-import MutationObserver from 'mutation-observer'
+// import MutationObserver from 'mutation-observer'
 import { get } from 'svelte/store';
 import { VConsoleSveltePlugin } from '../lib/sveltePlugin';
 import ElementComp from './element.svelte';
@@ -208,9 +208,9 @@ export class VConsoleElementPlugin extends VConsoleSveltePlugin {
       childNodes: [],
     };
     this.nodeMap.set(elem, node);
-    
+
     if (
-      node.nodeType == elem.TEXT_NODE || 
+      node.nodeType == elem.TEXT_NODE ||
       node.nodeType == elem.DOCUMENT_TYPE_NODE
       ) {
       node.textContent = elem.textContent;
