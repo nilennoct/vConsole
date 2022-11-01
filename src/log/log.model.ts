@@ -110,7 +110,11 @@ export class VConsoleLogModel extends VConsoleModel {
     if (typeof this.origConsole.log === 'function') {
       return;
     }
-    
+
+    if (tool.isDesktop()) {
+      return;
+    }
+
     // save original console object
     if (!window.console) {
       (<any>window.console) = {};
@@ -280,7 +284,7 @@ export class VConsoleLogModel extends VConsoleModel {
       origData: any[],
       isGroupHeader?: 0 | 1 | 2,
       isGroupCollapsed?: boolean,
-    } = { type: 'log', origData: [], isGroupHeader: 0, isGroupCollapsed: false, }, 
+    } = { type: 'log', origData: [], isGroupHeader: 0, isGroupCollapsed: false, },
     opt?: IVConsoleAddLogOptions
   ) {
     // get group

@@ -1,5 +1,6 @@
 import { writable, get } from 'svelte/store';
 import { VConsoleModel } from '../lib/model';
+import { isDesktop } from '../lib/tool';
 import { contentStore } from '../core/core.model';
 import { VConsoleNetworkRequestItem } from './requestItem';
 import { XHRProxy } from './xhr.proxy';
@@ -23,6 +24,11 @@ export class VConsoleNetworkModel extends VConsoleModel {
 
   constructor() {
     super();
+
+    if (isDesktop()) {
+      return;
+    }
+
     this.mockXHR();
     this.mockFetch();
     this.mockSendBeacon();

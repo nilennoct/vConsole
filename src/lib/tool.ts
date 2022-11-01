@@ -492,3 +492,13 @@ export function callWx(method: string, ...args) {
   }
   return undefined;
 }
+
+export function isDesktop(): boolean {
+  const platform = navigator.platform;
+
+  if (platform && (platform === 'MacIntel' || platform.startsWith('Win'))) {
+    return true;
+  }
+
+  return !/Mobile|Android|BlackBerry/i.test(navigator.userAgent);
+}
